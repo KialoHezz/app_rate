@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # own
     'app_r',
     'users',
+    
 ]
 
 MIDDLEWARE = [
@@ -131,7 +132,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+
 
 
 
