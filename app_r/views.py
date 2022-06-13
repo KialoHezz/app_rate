@@ -4,6 +4,7 @@ from .serializer import ProjectSerializer
 from .forms import ProjectsForm,RateForm
 
 from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 # Create your views here.
@@ -68,11 +69,10 @@ def rate(request):
 
 
 class ProjectListApi(APIView):
-    def get(self, request, format):
+    def get(self, request, format=None):
         all_projects = Projects.objects.all()
 
         serializers = ProjectSerializer(all_projects,many=True)
 
         return Response(serializers.data)
 
-        
