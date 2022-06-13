@@ -1,0 +1,16 @@
+{%extends 'base/base.html'%} 
+{% block content %}
+<div class="f-main">
+  <div class="alink">
+    <a href="">Go Back</a>
+  </div>
+  <div class="form-fields">
+    <h3><b><i>Add Project</i></b></h3>
+    <form method="POST" action="">
+      {% csrf_token %} 
+      {{form.as_p}}
+      <input type="submit" value="Add Project" />
+    </form>
+  </div>
+</div>
+{% endblock %}

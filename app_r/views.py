@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Projects
+from .forms import ProjectsForm
 
 
 # Create your views here.
@@ -13,8 +14,6 @@ def home(request):
 def about(request):
     return render(request, 'home/about.html')
 
-
-
 def search(request):
 
     if 'projects' in request.GET and request.GET["projects"]:
@@ -27,3 +26,23 @@ def search(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'home/search.html',{"message":message})
+
+
+def add_project(request):
+    if request.method == 'POST':
+        form = ProjectsForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+    else:
+        form = ProjectsForm()
+
+    cxt = {
+            'form': form,
+        }
+
+
+    
+    
+    return render(request, 'home/add_project.html',cxt)
