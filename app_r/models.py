@@ -16,3 +16,25 @@ class Projects(models.Model):
     def search_by_title(cls,search_term):
         project = cls.objects.filter(title__icontains=search_term)
         return project
+
+
+
+class Rate(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+        
+    )
+    
+    username = models.CharField(max_length=100)
+    comment = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+    rating = models.IntegerField(choices=RATING_CHOICES)
