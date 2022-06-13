@@ -5,7 +5,7 @@ from datetime import datetime
 class Projects(models.Model):
     title = models.CharField(max_length=20)
     description = models.TextField()
-    image = models.ImageField(default='default.jpg',  upload_to="projects")
+    image = models.ImageField(default='default.jpg',  upload_to="projects", blank=True)
     # author = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
