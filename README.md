@@ -1,10 +1,10 @@
-# Project Title
-APP_RATE
+#### Project Title
+APP_RATE 
 
-# Getting Started
+#### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-# Prerequisites
+#### Prerequisites
 Make a folder of your project(mkdir )
 
 Inside the project folder create Django environment and activate (python3 -m venv ) and source /bin/activate
@@ -16,15 +16,15 @@ Another way:
   - Inside your project folder pip install django
   - django-admin startproject <name-of-project> .
   - django-admin startapp <name-of-app>
-# Versioning
+#### Versioning
 Python-3.8.10
 Acknowledgments
 Inspiration{Documentation}
 
-# Authors
+#### Authors
 Hezron Ngoma - Initial work - app_rate
 
-# License
+#### License
 This project is licensed under the HEZZYKIALO License 
 Copyright
 @2022-HNK
