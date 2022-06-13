@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # third parties
     'crispy_forms',
     'phonenumber_field',
+    'rest_framework',
 
     # own
     'app_r',

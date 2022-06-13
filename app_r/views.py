@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
-from .models import Projects
-from .forms import ProjectsForm
+from .models import Projects,Rate
+from .serializer import ProjectSerializer
+from .forms import ProjectsForm,RateForm
+
+from rest_framework.views import APIView
 
 
 # Create your views here.
@@ -42,8 +45,34 @@ def add_project(request):
     cxt = {
             'form': form,
         }
-
-
-    
-    
+  
     return render(request, 'home/add_project.html',cxt)
+
+
+def rate(request):
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        print(form)
+        if form.is_valid():
+            form.save()
+        return redirect('homepage')
+
+    else:
+        form = RateForm()
+
+    cxt = {
+            'form': form,
+        }
+
+    return render(request, 'home/rate.html',cxt)\
+
+
+class ProjectListApi(APIView):
+    def get(self, request, format):
+        all_projects = Projects.objects.all()
+
+        serializers = ProjectSerializer(all_projects,many=True)
+
+        return Response(serializers.data)
+
+        

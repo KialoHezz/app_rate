@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from datetime import datetime
 # Create your models here.
 class Projects(models.Model):
     title = models.CharField(max_length=20)
@@ -36,5 +36,5 @@ class Rate(models.Model):
     
     username = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField(auto_now_add=True, blank=True)
     rating = models.IntegerField(choices=RATING_CHOICES)

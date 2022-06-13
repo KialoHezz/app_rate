@@ -11,7 +11,8 @@
     <div class="card-header card_title">{{project.title}}</div>
     <div class="card-body">
       <p class="card-text">{{project.description}}</p>
-      <div class="container rates_star">
+      <a class="navbar-brand rate-link" href="{% url 'rates' %}">Rate</a>
+            <div class="container rates_star">
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
