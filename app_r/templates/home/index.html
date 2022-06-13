@@ -1,4 +1,5 @@
-{% extends "base/base.html" %} {% block content %}
+{% extends "base/base.html" %} 
+{% block content %}
 <div class="container-fluid projects">
   <div class="container ">
     {% for project in projects %}
@@ -7,10 +8,10 @@
       src="{{project.author.profile.image.url}}"
       alt=""
     />
-    <div class="card-header">{{project.title}}</div>
+    <div class="card-header card_title">{{project.title}}</div>
     <div class="card-body">
       <p class="card-text">{{project.description}}</p>
-      <div class="container m-6 p-6">
+      <div class="container rates_star">
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>

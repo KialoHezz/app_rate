@@ -1,3 +1,11 @@
+.card_title{
+    text-align: center;
+    font-size: 25px;
+}
+.rates_star{
+    text-align: center;
+}
 .checked{
     color: #7c821c
 }
+
