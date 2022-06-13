@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Projects
 from .forms import ProjectsForm
 
@@ -34,6 +34,7 @@ def add_project(request):
 
         if form.is_valid():
             form.save()
+        return redirect('homepage')
 
     else:
         form = ProjectsForm()
