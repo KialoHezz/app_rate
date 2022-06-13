@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm,ProfileUpdateForm,UserUpdateForm
 from .serializer import ProfileSerializer
+from .models import Profile
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
