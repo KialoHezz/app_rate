@@ -9,9 +9,9 @@ urlpatterns = [
     path('about/', views.home,name='aboutpage'),
     path('search/',views.search,name = 'search'),
     path('add/',views.add_project,name = 'add_project'),
-    path('rate/',views.rate,name = 'rates'),
+    path('review/',views.review,name = 'review'),
     # create API endpoint
-    path('api/project/', views.ProjectListApi().as_view()), 
+    path('project/', views.ProjectListApi().as_view()), 
     
 ]
 

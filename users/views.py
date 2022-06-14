@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm,ProfileUpdateForm,UserUpdateForm
 from .serializer import ProfileSerializer
 from .models import Profile
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -60,5 +61,19 @@ class ProfileListApi(APIView):
         serializers = ProfileSerializer(all_profile,many=True)
 
         return Response(serializers.data)
+
+
+
+    def post(self, request, format=None):
+
+        serializers = ProfileSerializer(data=request.data)
+        # permission_classes = (IsAdminOrReadOnly)
+
+        if serializers.is_valid():
+            serializers.save()
+
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

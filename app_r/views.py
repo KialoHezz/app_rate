@@ -52,10 +52,10 @@ def add_project(request):
     return render(request, 'home/add_project.html',cxt)
 
 
-def rate(request):
+def review(request):
     if request.method == 'POST':
         form = RateForm(request.POST)
-        print(form)
+        
         if form.is_valid():
             form.save()
         return redirect('homepage')
@@ -67,7 +67,7 @@ def rate(request):
             'form': form,
         }
 
-    return render(request, 'home/rate.html',cxt)\
+    return render(request, 'home/review.html',cxt)
 
 
 class ProjectListApi(APIView):

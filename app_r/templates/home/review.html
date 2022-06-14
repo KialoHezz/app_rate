@@ -1,11 +1,11 @@
 {%extends 'base/base.html'%} 
 {% block content %}
  <div class="form-fields">
-    <h3><b><i>rate</i></b></h3>
+    <h3><b><i>Review</i></b></h3>
     <form method="POST" action="">
       {% csrf_token %} 
       {{form.as_p}}
-      <input type="submit" value=" Project rate" />
+      <input type="submit" value=" Project Review" />
     </form>
   </div>
 {% endblock %}
