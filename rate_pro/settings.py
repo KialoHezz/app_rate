@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'rate_pro.wsgi.application'
 # }
 
 MODE=config("MODE", default="dev")
-# SECRET_KEY=config('SECRET_KEY')
+SECRET_KEY=config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 
