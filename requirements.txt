@@ -11,6 +11,7 @@ phonenumbers==8.12.50
 phonenumberslite==8.12.50
 Pillow==9.1.1
 psycopg2==2.9.3
+python-decouple==3.6
 pytz==2022.1
 sqlparse==0.4.2
 whitenoise==6.2.0
