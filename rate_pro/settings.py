@@ -106,7 +106,6 @@ if config('MODE')=="dev":
            'USER': config('DB_USER'),
            'PASSWORD': config('DB_PASSWORD'),
            'HOST': config('DB_HOST'),
-           'SECRET':config('SECRET_KEY'),
            'PORT': '',
        }
        
@@ -188,7 +187,7 @@ MEDIA_URL = '/media/'
 
 
 # Configure Django App for Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
