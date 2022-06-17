@@ -47,6 +47,7 @@ def add_project(request):
 
     cxt = {
             'form': form,
+            
         }
   
     return render(request, 'home/add_project.html',cxt)
